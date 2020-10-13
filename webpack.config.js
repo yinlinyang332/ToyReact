@@ -1,5 +1,8 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
   mode: 'development',
+  devtool: "eval-source-map",
   optimization: {
     minimize: false
   },
@@ -19,5 +22,10 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    })
+  ]
 }
